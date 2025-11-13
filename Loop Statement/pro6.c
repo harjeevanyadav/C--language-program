@@ -10,5 +10,6 @@ int main(){
         fact=fact*i;
     }
     printf("%d! factorial is :%d", n,fact);
+    
     return 0;
 }
