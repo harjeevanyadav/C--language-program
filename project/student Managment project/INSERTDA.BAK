@@ -1,0 +1,36 @@
+void insert()
+{
+struct Demo data[100]; //create structure type variable
+int i,ch,p;
+FILE *fp;
+fp=fopen("c:\\jp\\data.xls","a");
+init();
+
+for(i=0;i<100;i++)
+{
+ printf("Sid: ");
+ scanf("%d",&data[i].sid);
+ printf("Name: ");
+ scanf("%s",data[i].nm);
+ printf("Address: ");
+ scanf("%s",data[i].sadd);
+ printf("Fees: ");
+ scanf("%d",&data[i].fees);
+       printf("Do you want to cont....Press 1: " );
+       scanf("%d",&ch);
+    if(ch != 1)
+    {
+    p=i;
+    break;
+    }
+}
+for(i=0;i<=p;i++)
+{
+fprintf(fp,"\n%d",data[i].sid);
+fprintf(fp,"\t%s",data[i].nm);
+fprintf(fp,"\t%s",data[i].sadd);
+fprintf(fp,"\t%d",data[i].fees);
+}
+fclose(fp);
+getch();
+}

@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include"c:\\jp\\graph.h"
+#include"c:\\jp\\passw.h"
+#include"c:\\jp\\str1.h"
+#include"c:\\jp\\insertdata.h"
+#include"c:\\jp\\showall.h"
+#include"c:\\jp\\srch.h"
+#include"c:\\jp\\update.h"
+#include"c:\\jp\\dele.h"
+void main()
+{
+int n,ch;
+init();
+setcolor(RED);
+settextstyle(4,HORIZ_DIR,7);
+outtextxy(10,10,"STUDENT MGMT ");
+outtextxy(100,60,"SYSTEM");
+gotoxy(20,10);
+printf("press any key to cont.");
+getch();
+cleardevice();
+n=password();
+clrscr();
+if(n==0)
+{
+   do{
+      cleardevice();
+      bar3d(100,100,400,400,20,1);
+      gotoxy(26,10);
+      printf("\nPress 1 for Insert: ");
+      printf("\nPress 2 for Show All: ");
+      printf("\nPress 3 for UpdateData: ");
+      printf("\nPress 4 for DeleteData: ");
+      printf("\nPress 5 for SearchData: ");
+      printf("\nPress 0 for Exit: ");
+      scanf("%d",&ch);
+	   switch(ch)
+	   {
+	     case 1: insert();
+		      break;
+	     case 2: showdata();
+		     break;
+	     case 3: update();
+		     break;
+	     case 4: del1();
+		     break;
+	     case 5: srch();
+		     break;
+	     case 0: break;
+	   }
+      }while(ch!=0);
+}else{
+gotoxy(12,10);
+printf("Try Firsay ");
+}
+}//main function

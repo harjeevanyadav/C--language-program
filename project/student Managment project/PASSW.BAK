@@ -1,0 +1,20 @@
+#include<string.h>
+int password()
+{
+  char nm[20],sn[]={"jaihind"};
+ int i,n;
+  for(i=0; ;i++)
+  {
+  gotoxy(10,10);
+  printf("Enter Your Password: ");
+  nm[i]=getch();
+  printf("*");
+    if(nm[i]==13)
+    {
+    nm[i]='\0';
+    break;
+    }
+  }
+ n=strcmp(nm,sn);
+return n;
+}

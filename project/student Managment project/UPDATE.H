@@ -1,0 +1,59 @@
+
+void update()
+{
+FILE *fl,*op;
+struct Demo dm[100];
+int k,p,id,ct=0;
+cleardevice();
+fl=fopen("c:\\jp\\data.xls","r");
+for(k=0;k<100;k++)
+{
+ fscanf(fl,"%d",&dm[k].sid);
+ fscanf(fl,"%s",&dm[k].nm);
+ fscanf(fl,"%s",&dm[k].sadd);
+ fscanf(fl,"%d",&dm[k].fees);
+    if(feof(fl)!=0)
+    {
+    p=k;
+    break;
+    }
+}
+fclose(fl);
+printf("Enter Your ID to update the data :");
+scanf("%d",&id);
+ for(k=0;k<=p;k++)
+ {
+  if(dm[k].sid==id)
+  {
+   printf("Enter New Name: ");
+   scanf("%s",&dm[k].nm);
+   printf("Enter New Address: ");
+   scanf("%s",&dm[k].sadd);
+   printf("Enter New Fees: ");
+   scanf("%d",&dm[k].fees);
+   ct=1;
+   break;
+  }
+ }
+op=fopen("c:\\jp\\data.xls","w");
+if(ct==1)
+ {
+   for(k=0;k<=p;k++)
+   {
+   fprintf(op,"\n%d",dm[k].sid);
+   fprintf(op,"\t%s",dm[k].nm);
+   fprintf(op,"\t%s",dm[k].sadd);
+   fprintf(op,"\t%d",dm[k].fees);
+   }
+ printf("\n\nData Updated ");
+ }
+
+ if(ct==0)
+   {
+    printf("\nData Not Found");
+   }
+printf("\n\nPress Any key to Cont.....");
+getch();
+}
+
+
