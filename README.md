@@ -71,4 +71,4 @@ Passionate about Programming, Cybersecurity, and Cloud Security.
 ## ⭐ Support
 
 If you find this repository useful, consider giving it a star!
-thank you 
+thank you !
